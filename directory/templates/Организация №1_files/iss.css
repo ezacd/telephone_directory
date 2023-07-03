@@ -1,0 +1,195 @@
+
+BODY
+{
+    FONT-FAMILY: Tahoma,Verdana,Tahoma,Arial Cyr,Courier New;
+    FONT-SIZE: 9pt;
+    LETTER-SPACING: 0pt;
+}
+A:link
+{
+    COLOR: blueligth;
+    LINE-HEIGHT: 4mm;
+    TEXT-DECORATION: none;
+}
+A:visited
+{
+    COLOR: #606060;
+    LINE-HEIGHT: 4mm;
+    TEXT-DECORATION: none;
+}
+A:hover
+{
+    COLOR: blue;
+    LINE-HEIGHT: 4mm;
+    TEXT-DECORATION: underline;
+}
+A.date:link
+{
+    COLOR: #003399;
+    LINE-HEIGHT: 4mm;
+    TEXT-DECORATION: none;
+}
+A.date:visited
+{
+    COLOR: #003399;
+    LINE-HEIGHT: 4mm;
+    TEXT-DECORATION: none;
+}
+A.date:hover
+{
+    COLOR: #003399;
+    LINE-HEIGHT: 4mm;
+    TEXT-DECORATION: underline;
+}
+H1
+{
+    MARGIN-BOTTOM: 1pt;
+    MARGIN-TOP: 1pt;
+    TEXT-ALIGN: left;
+}
+H2
+{
+    MARGIN-BOTTOM: 1pt;
+    MARGIN-TOP: 1pt;
+    TEXT-ALIGN: left;
+}
+H3
+{
+    MARGIN-BOTTOM: 1pt;
+    MARGIN-TOP: 1pt;
+    TEXT-ALIGN: left;
+}
+H4
+{
+    MARGIN-BOTTOM: 1pt;
+    MARGIN-TOP: 1pt;
+    TEXT-ALIGN: left;
+}
+.head
+{
+}
+LI
+{
+    FONT-SIZE: 9pt;
+    LETTER-SPACING: 0pt;
+    LINE-HEIGHT: 4mm;
+    MARGIN-BOTTOM: 3pt;
+    MARGIN-TOP: 3pt;
+    TEXT-ALIGN: justify;
+}
+UL
+{
+    FONT-SIZE: 9pt;
+    LETTER-SPACING: 0pt;
+    LINE-HEIGHT: 4mm;
+    MARGIN-BOTTOM: 3pt;
+    MARGIN-TOP: 3pt;
+    TEXT-ALIGN: justify;
+}
+.marktext
+{
+    COLOR: blue;
+}
+.error
+{
+    COLOR: red;
+}
+.msg
+{
+    FONT-SIZE: 9pt;
+    TEXT-ALIGN: justify;
+}
+.msg1
+{
+    FONT-SIZE: 10pt;
+    TEXT-ALIGN: justify;
+}
+.rmsg {
+    FONT-SIZE: 9pt;
+    TEXT-ALIGN: right;
+    MARGIN-RIGHT: 3pt;
+}
+.mcent
+{
+    FONT-SIZE: 7pt;
+    TEXT-ALIGN: center;
+}
+.lmsg
+{
+    FONT-SIZE: 8pt;
+    TEXT-ALIGN: right;
+}
+.lcent
+{
+    FONT-SIZE: 8pt;
+    TEXT-ALIGN: center;
+}
+.lleft
+{
+    FONT-SIZE: 8pt;
+    TEXT-ALIGN: left;
+}
+.phone
+{
+    FONT-SIZE: 9pt;
+    TEXT-ALIGN: left;
+}
+.cent
+{
+    FONT-SIZE: 9pt;
+    TEXT-ALIGN: center;
+}
+.cent14
+{
+    FONT-SIZE: 12pt;
+    TEXT-ALIGN: center;
+}
+.left
+{
+    FONT-SIZE: 9pt;
+    TEXT-ALIGN: left;
+}
+.right
+{
+    FONT-SIZE: 9pt;
+    TEXT-ALIGN: right;
+}
+.img
+{
+    BORDER-BOTTOM-COLOR: white;
+    BORDER-BOTTOM-WIDTH: 1px;
+    FILTER: alpha(opacity=65,enabled=1);
+}
+.card
+{
+    FONT-SIZE: 9pt;
+}
+P.text
+{
+    FONT-SIZE: 9pt;
+    LETTER-SPACING: 1pt;
+    LINE-HEIGHT: 12pt;
+    MARGIN: 10pt 16pt 5pt;
+    TEXT-ALIGN: justify;
+}
+P.table
+{
+    MARGIN-BOTTOM: 2pt;
+    MARGIN-TOP: 2pt;
+}
+P.little
+{
+    FONT-SIZE: 8pt;
+    LETTER-SPACING: 2pt;
+    MARGIN-BOTTOM: 2pt;
+    MARGIN-TOP: 2pt;
+    PADDING-BOTTOM: 2pt;
+    PADDING-TOP: 2pt;
+    TABLE.input: 15pt;
+}
+.mainbut
+{
+    FONT-SIZE: 9pt;
+    WIDTH: 90px;
+    CURSOR:HAND;
+}

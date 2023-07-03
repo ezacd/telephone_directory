@@ -1,0 +1,221 @@
+
+var curSelection = null;
+ 
+function setStyle(src, toClass) 
+{
+    if (null != src) 
+        src.className = toClass;
+}
+ 
+function mouseEnters(e) 
+{  
+    if (!e) var e = window.event;
+    if ((curSelection != e.toElement) && (e.toElement != null) && ("A" == e.toElement.tagName)){
+	setStyle(e.toElement,"over");
+        window.status = e.toElement.innerText;
+        return true;
+    }
+    return false;
+}
+
+function mouseLeaves(e) 
+{
+    if (!e) var e = window.event;
+    if ((curSelection != e.fromElement) && (e.fromElement != null) && ("A" == e.fromElement.tagName)){
+	setStyle(e.fromElement, "");
+        window.status = '';
+        return true;
+    }
+    return false;
+}
+
+function outliner(e)
+{
+	var li = e.parentNode;
+	var ul = null;
+	while (li != null){
+		if (li.tagName == 'LI')
+			break;
+		if ((li.nextSibling != null) && (li.nextSibling.tagName == 'UL'))
+			ul = li.nextSibling;
+		li = li.parentNode;
+	}
+	if (li == null)
+		return;
+	
+	if (ul == null){
+		ul = e.nextSibling;
+		while (ul != null){
+			if (ul.tagName == 'UL')
+				break;
+			ul = ul.nextSibling;
+		}
+	}
+	
+	if (ul == null){
+		ul = li.nextSibling;
+		while (ul != null){
+			if (ul.tagName == 'UL')
+				break;
+			ul = ul.nextSibling;
+		}
+	}
+	if (li.className == ''){
+		e.className = 'open';
+		li.className = 'open';
+		if (ul != null)
+			ul.className = 'expanded';
+	}else{
+		e.className = 'closed';
+		li.className = '';
+		if (ul != null)
+			ul.className = '';
+	}
+	return false;
+}
+         
+function backH()
+{
+	history.back();
+}
+
+function mOver(el)
+{
+	el.style.borderBottomColor='red';
+	el.style.filter='alpha(opacity=65,enabled=0)';
+}
+
+function mOut(el)
+{
+	el.style.borderBottomColor='white';
+	el.style.filter='alpha(opacity=65,enabled=1)';
+}
+	
+function Add()
+{
+	var index = document.card.DOtr.selectedIndex;
+	if(index != -1){
+		var item = document.card.DOtr.item(index);
+		var el = document.createElement("OPTION");
+		el.text=item.text;
+		el.value=item.value;	
+		document.card.DOtr.remove(index);
+		if(index == document.card.DOtr.length){
+			document.card.DOtr.selectedIndex = index - 1;
+		}else{
+			document.card.DOtr.selectedIndex = index;
+		}
+		document.card.DOtrOtr.add(el);
+	}
+}
+	
+function Remove()
+{
+	var index = document.card.DOtrOtr.selectedIndex;
+	if(index != -1){
+		var item = document.card.DOtrOtr.item(index);
+		var el = document.createElement("OPTION");
+		el.text=item.text;
+		el.value=item.value;	
+		document.card.DOtrOtr.remove(index);
+		if(index == document.card.DOtrOtr.length){
+			document.card.DOtrOtr.selectedIndex = index - 1;
+		} else {
+			document.card.DOtrOtr.selectedIndex = index;
+		}
+		document.card.DOtr.add(el);
+	}
+}
+
+function Prepare()
+{			
+	if(document.card.DOtrOtr.length > 0){
+		for(var i=0; i<document.card.DOtrOtr.length; i++)
+			document.card.resultval.value += document.card.DOtrOtr.item(i).value + '?';
+	}else{
+		document.card.resultval.value = "";
+	}
+}
+
+var winModalWindow
+ 
+function IgnoreEvents(e)
+{
+  if ((winModalWindow == null) || winModalWindow.closed){
+     window.top.releaseEvents(Event.CLICK | Event.FOCUS)
+	 winModalWindow = null;
+	 return true;
+  }
+  return false
+}
+
+function HandleFocus()
+{
+  if (winModalWindow)
+  {
+    if (!winModalWindow.closed)
+    {
+      winModalWindow.focus()
+    }
+    else
+    {
+      window.top.releaseEvents (Event.CLICK|Event.FOCUS)
+	  winModalWindow = null;
+	  return true;
+    }
+  }
+  return false
+}
+
+function showDialog(url, w, h, submit_proc)
+{   
+  url += '&r=' + Math.random();
+  window.dialogResult = null;
+  window.submit_proc  = submit_proc;
+  if (window.showModalDialog){
+     window.showModalDialog(url, window, 
+		'dialogWidth:' + w + 'px;' +
+		'dialogHeight:' + h + 'px;' +
+		'status:no;resizeable:no;scroll:no;help:no');
+  }
+  else
+  {
+    window.top.captureEvents (Event.CLICK|Event.FOCUS);
+    winModalWindow = 
+    window.open (url, "ModalChild",
+		"dependent=yes,status=no," +
+		"width=" + w + "," +
+		"height=" + h + "," +
+		"screenX=" + (screen.width - w) / 2 + "," +
+		"screenY=" + (screen.height - h) / 2 );
+	winModalWindow.parentForm = window;
+    winModalWindow.focus()
+    window.top.onclick=IgnoreEvents;
+    window.top.onfocus=HandleFocus ;
+  }
+  return window.dialogResult;
+}
+
+function checkShift()
+{
+  var e = window.event;
+  if (e == null)
+    return true;
+  if (!e.shiftKey)
+    return true;
+  var el;
+  for (el = e.srcElement; el != null; el = el.parentNode){
+    if (el.tagName != 'A')
+      continue;
+    document.location = el.href + "&shift=1";
+    return false;
+  }
+  return true;
+}
+
+function setStatus(el)
+{
+  window.status=el.innerText;
+  return true;
+}
+

@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head> 
+    <meta http-equiv="GENERATOR" content="KODEKS HTTP">  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Поиск</title>
+    <link rel="stylesheet" href="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss.css" type="text/css">
+    <link rel="stylesheet" href="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss_002.css" type="text/css">
+    <script type="text/javascript" language="JavaScript" src="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss"></script>
+  <script type="text/javascript" language="JavaScript" src="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss_002"></script><script>
+	window.print_url = '/iss?search&print=1';
+	function PrintUrl()
+	{
+		return window.print_url;
+	}
+	window.PrintUrl = PrintUrl;
+	function setupStyle()
+	{
+		if (document.all == null)
+			document.body.style.overflow = '';
+	}
+
+  </script></head>
+
+  
+  
+  <body onload="setupStyle(); if (window.init != null) window.init(); showStart(0)" style="margin: 0px; font-family: Arial; font-size: 20pt; font-weight: bold;" background="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss_003.gif">
+  <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+  <td bgcolor="#FFCC00">
+  <div style="height: 100%; width: 140px; overflow: hidden">
+  <table cwllpadding="0" height="100%" cellspacing="0">
+    <tbody><tr>
+    <td rowspan="2" valign="top" align="center"><a href="http://10.2.8.11/iss?start" onmouseover="window.status='ПЕРВАЯ СТРАНИЦА';return true;" onmouseout="window.status='';return true;">
+<img src="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss.jpg" alt="Справочник" vspace="0" border="0" align="top">
+</a>
+<br>
+    <a href="http://10.2.8.11/iss?drn" onmouseover="window.status='Посмотреть дни рождения на текущую дату';return true;" onmouseout="window.status='';return true;" title="Посмотреть дни рождения на текущую дату" class="date"><b><font size="-1">Сегодня</font><br><font id="slide0" style="display: none;" size="-1">пятница</font><font id="slide1" style="display: none;" size="-1">9&nbsp;июня&nbsp;2023&nbsp;г.</font><font id="slide2" style="" size="-1">родились...</font><font id="slide3" style="display:none;" size="-1"></font></b></a>
+    <hr width="140" size="1" color="#000000" align="left">
+    <a href="http://10.2.8.11/iss?start" onmouseover="window.status='В начало';return true;" onmouseout="window.status='';return true;">
+    <img alt="В начало" src="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss_005.gif" width="140" height="25" border="0"></a>
+    <a href="http://10.2.8.11/iss?search" onmouseover="window.status='Поиск';return true;" onmouseout="window.status='';return true;">
+    <img alt="Поиск" src="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss_004.gif" width="140" height="25" border="0"></a>
+    <a href="http://10.2.8.11/iss?help_search_boss" id="HELP" target="HELP" onmouseover="window.status='Помощь';return true;" onmouseout="window.status='';return true;">
+    <img alt="Помощь" src="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss_002.gif" width="140" height="25" border="0"></a>
+    
+    </td>
+    </tr>
+  </tbody></table></div>
+  </td>
+  <td width="100%">
+    <table width="100%" height="100%"> <tbody><tr><td style="border-style:solid;border-bottom-width:5px;border-left-width:0px;border-right-width:0px;border-top-width:5px;border-color:#FFCC00;background-image:url(iss?bg_title.gif);" align="center"><img src="%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_files/iss.gif" style="margin: 0 0 0 0;"></td></tr><tr height="100%"><td>
+    <div style="height: 100%; overflow:auto; background-color: white; border: 1px solid #FFCC00">
+
+<script><!--
+
+cur_day =9;
+cur_mon =6;
+
+function init()
+{
+	checkOk();
+}
+
+window.init = init;
+
+function setVal(id, val)
+{
+  var el = document.getElementById(id);
+  if (el.value != '')
+	return;
+  el.value = val;
+}
+
+function trim(s)
+{
+  var start;
+  for (start = 0; start < s.length; start++){
+	if (s.substring(start, start + 1) != ' ')
+		break;
+  }
+  if (start > 0)
+	s = s.substring(start);
+  for (start = s.length ; start > 0; start--){
+	if (s.substring(start - 1, start) != ' ')
+		break;
+  }
+  if (start < s.length)
+	s = s.substring(0, start);
+  return s;
+}
+
+function isEmpty(id)
+{
+  var el = document.getElementById(id);
+  if (el == null)
+	return true;
+  return trim(el.value) == '';
+}
+
+function checkOk()
+{
+	document.getElementById('ok1').disabled =
+		isEmpty('s11') &&
+		isEmpty('s12') &&
+		isEmpty('s13') &&
+		isEmpty('s14') &&
+		isEmpty('s15') &&
+		isEmpty('d1') &&
+		isEmpty('d2') &&
+		isEmpty('m1') &&
+		isEmpty('m2');
+	document.getElementById('ok2').disabled =
+		isEmpty('s21') &&
+		isEmpty('s22') &&
+		isEmpty('s23') &&
+		isEmpty('s24');
+	window.setTimeout('checkOk()', 500);
+}
+
+function dr(el)
+{
+  if (el != null){
+	if (el.value == ''){
+		document.getElementById('d1').value = '';
+		document.getElementById('d2').value = '';
+		document.getElementById('m1').value = '';
+		document.getElementById('m2').value = '';
+		return;
+	}
+  }
+  setVal('d1', cur_day);
+  setVal('d2', cur_day);
+  setVal('m1', cur_mon);
+  var m = cur_mon;
+  if (document.getElementById('d1').value > document.getElementById('d2').value)
+	m++;
+  if (m > 12)
+    m = 1;
+  setVal('m2', m);
+}
+
+function cr(div)
+{
+  var d1 = document.getElementById("s1");
+  var d2 = document.getElementById("s2");
+  var b1 = document.getElementById("b1");
+  var b2 = document.getElementById("b2");
+  if (div){
+    d2.style.display = "none";
+    d1.style.display = "";
+    b2.style.display = "none";
+    b1.style.display = "";
+    document.getElementById("HELP").href='iss?help_search_boss';
+    document.getElementById('s11').focus();
+  }else{
+    d1.style.display = "none";
+    d2.style.display = "";
+    b1.style.display = "none";
+    b2.style.display = "";
+    document.getElementById("HELP").href='iss?help_search_dep';
+    document.getElementById('s21').focus();
+  }
+  return false;
+}
+
+function classDone()
+{
+}
+
+function classOrg()
+{
+	showDialog('iss?class&area=108&id=s23', 640, 500, classDone);  
+	window.setTimeout("document.getElementById('s23').focus()", 10);
+	return false;
+}
+
+function classDol()
+{
+	showDialog('iss?class&area=109&id=s15', 640, 500, classDone);  
+	window.setTimeout("document.getElementById('s15').focus()", 10);
+	return false;
+}
+
+function classAddr(id)
+{
+	showDialog('iss?class&area=101&id=' + id, 640, 500, classDone);  
+	window.setTimeout("document.getElementById('" + id + "').focus()", 10);
+	return false;
+}
+
+function keyChar1(e)
+{
+	if (e == null)
+		e = window.event;
+	var code = e.charCode;
+	if ((code == null) || (code == 0))
+		code = e.keyCode;
+	if (code == 13){
+		document.getElementById('form1').submit();
+		return false;
+	}
+	return true;	
+}
+
+function keyChar2(e)
+{
+	if (e == null)
+		e = window.event;
+	var code = e.charCode;
+	if ((code == null) || (code == 0))
+		code = e.keyCode;
+	if (code == 13){
+		document.getElementById('form2').submit();
+		return false;
+	}
+	return true;	
+}
+
+</script>
+<table width="100%" cellspacing="0" cellpadding="3" border="0"><tbody><tr><td>
+</td></tr><tr bgcolor="#FFFFCC">
+<td><p class="msg">Поиск</p></td>
+<td align="right"><div name="s1" id="s1" style=""><p class="lmsg" align="right">
+Поиск должностного лица <a href="#" onclick="return cr(false);">[Поиск организации]</a>
+</p></div>
+<div name="s2" id="s2" style="display:none"><p class="lmsg" align="right">
+Поиск организации <a href="#" onclick="return cr(true);">[Поиск должностного лица]</a>
+</p></div>
+</td></tr>
+<tr><td colspan="2">
+<div id="b1" style="width: 100%;">
+<form action="iss?" method="GET" id="form1">
+<input type="hidden" name="resboss">
+<table width="100%" border="0">
+<tbody><tr>
+<td nowrap="nowrap" align="right"><label for="s11" class="msg">ФИО:</label></td>
+<td width="100%"><input name="s11" id="s11" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar1(event);"></td>
+</tr>
+<tr>
+<td nowrap="nowrap" align="right"><label for="s12" class="msg">Средства связи:</label></td>
+<td><input name="s12" id="s12" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar1(event);"></td>
+</tr>
+<tr>
+<td nowrap="nowrap" align="right"><label for="s13" class="msg">Адрес:</label></td>
+<td>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td width="100%">
+<input type="hidden" id="s13h">
+<input name="s13" id="s13" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar1(event);"></td>
+
+<td>
+<input type="submit" onclick="classAddr('s13'); return false;" value="...">
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" align="right"><label for="s14" class="msg">Комната:</label></td>
+<td><input name="s14" id="s14" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar1(event);"></td>
+</tr>
+<tr>
+<td nowrap="nowrap" align="right"><label for="s15" class="msg">Должность:</label></td>
+<td>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td width="100%">
+<input type="hidden" id="s15h">
+<input name="s15" id="s15" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar1(event);"></td>
+
+<td>
+<input type="submit" onclick="classDol(); return false;" value="...">
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+
+<tr>
+<td nowrap="nowrap" align="right"><label for="d1" class="msg" onclick="dr()">Дата рождения:</label></td>
+<td><span class="msg">с <select name="d1" size="1" onchange="dr(this)">
+<option value="" %isselect(this[dn]="" +="" ''="=" '')="" selected="selected"></option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+<select name="m1" size="1" onchange="dr(this)">
+<option value="" %isselect(this[mn]="" +="" ''="=" '')="" selected="selected"></option>
+<option value="1">января</option>
+<option value="2">февраля</option>
+<option value="3">марта</option>
+<option value="4">апреля</option>
+<option value="5">мая</option>
+<option value="6">июня</option>
+<option value="7">июля</option>
+<option value="8">августа</option>
+<option value="9">сентября</option>
+<option value="10">октября</option>
+<option value="11">ноября</option>
+<option value="12">декабря</option>
+</select>
+ по <select name="d2" size="1" onchange="dr(this)">
+<option value="" %isselect(this[dn]="" +="" ''="=" '')="" selected="selected"></option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+<select name="m2" size="1" onchange="dr(this)">
+<option value="" %isselect(this[mn]="" +="" ''="=" '')="" selected="selected"></option>
+<option value="1">января</option>
+<option value="2">февраля</option>
+<option value="3">марта</option>
+<option value="4">апреля</option>
+<option value="5">мая</option>
+<option value="6">июня</option>
+<option value="7">июля</option>
+<option value="8">августа</option>
+<option value="9">сентября</option>
+<option value="10">октября</option>
+<option value="11">ноября</option>
+<option value="12">декабря</option>
+</select>
+</span></td>
+</tr>
+
+<tr>
+<td></td>
+<td><br><br><input id="ok1" type="submit" value="Поиск" disabled="disabled"></td>
+</tr>
+</tbody></table>
+</form>
+</div>
+<div id="b2" style="width: 100%;display:none">
+<form action="iss?resorg" method="GET" id="form2">
+<input type="hidden" name="resorg">
+<table width="100%" border="0">
+<tbody><tr>
+<td nowrap="nowrap" align="right"><label for="s21" class="msg">Наименование:</label></td>
+<td width="100%"><input name="s21" id="s21" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar2(event);"></td>
+</tr>
+<tr>
+<td nowrap="nowrap" align="right"><label for="s22" class="msg">Средства связи:</label></td>
+<td><input name="s22" id="s22" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar2(event);"></td>
+</tr>
+<tr>
+<td nowrap="nowrap" align="right"><label for="s23" class="msg">Отрасль:</label></td>
+<td>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td width="100%">
+<input type="hidden" id="s23h">
+<input name="s23" id="s23" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar2(event);"></td>
+
+<td>
+<button onclick="classOrg(); return false;">...</button>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" align="right"><label for="s13" class="msg">Адрес:</label></td>
+<td>
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td width="100%">
+<input type="hidden" id="s24h">
+<input name="s24" id="s24" type="text" maxlength="255" style="width: 100%" onkeypress="return keyChar1(event);"></td>
+
+<td>
+<input type="submit" onclick="classAddr('s24'); return false;" value="...">
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td></td>
+<td><br><br><input id="ok2" type="submit" value="Поиск" disabled="disabled"></td>
+</tr>
+</tbody></table>
+</form>
+</div>
+</td></tr>
+</tbody></table>
+</div></td></tr>
+<script language="JavaScript">
+function doNews()
+{
+		showNews('iss?news', 500, 300);
+		return false;
+}
+function showNews(url, w, h)
+{   
+  url += '&r=' + Math.random();
+  window.dialogResult = null;
+     window.showModalDialog(url, window, 
+		'dialogWidth:' + w + 'px;' +
+		'dialogHeight:' + h + 'px;' +
+		'status:no;resizeable:no;scroll:yes;help:no');
+return window.dialogResult;
+}
+</script>
+	</tbody></table></td></tr></tbody></table></body></html>
