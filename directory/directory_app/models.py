@@ -26,4 +26,4 @@ class User(AbstractUser):
     communications = models.CharField(max_length=255)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, null=True)
     role = models.CharField(max_length=255, choices=CATEGORY_TYPES, default=default)
-
+    username = models.CharField(max_length=255, null=True)
