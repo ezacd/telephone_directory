@@ -1,0 +1,24 @@
+
+var j;
+var k;
+function showStart(j)
+{
+	if (j == 3)
+	{
+		j = 0;
+		k = 2;
+	}
+	else
+	{
+		if (j != 0)
+			k = j - 1;
+		else
+			k = 2;
+	}
+	var slide_name1 = "slide" + j;
+	var slide_name2 = "slide" + k;
+	document.all.item(slide_name2).style.display = "none";
+	document.all.item(slide_name1).style.display = "";
+	j++;
+	setTimeout("showStart(" + j + ")", 2000); 
+}

@@ -1,0 +1,61 @@
+
+<!--         UL.toc {cursor:hand}
+         UL.toc LI {list-style-image:url(iss?bul_c.gif)}
+         UL.toc LI.open {list-style-image:url(iss?bul_o.gif)}
+         UL.toc UL LI {list-style-image: none; list-style: none}
+         UL.toc UL {display:none;} 
+         UL.toc UL.expanded {display:block}
+         UL.toc LI A:link,UL.toc LI A:hover,UL.toc LI A:visited {text-decoration:none; font-size:9pt;}
+         UL.toc LI UL A {text-decoration:none;color:rgb(91,107,116);font-size:9pt;} 
+         UL.toc A:active, UL.toc A.select
+         UL.toc .over {color:red;font-size:9pt;}
+         UL.toc UL  {margin-top:0pt; margin-bottom:0pt}
+         P.list {margin-top:5mm;margin-left:10pt;}
+-->
+UL.toc {
+	CURSOR: hand
+}
+UL.toc LI {
+	LIST-STYLE-IMAGE: url(iss?bul_c.gif)
+}
+UL.toc LI.open {
+	LIST-STYLE-IMAGE: url(iss?bul_o.gif)
+}
+UL.toc UL LI {
+	LIST-STYLE-IMAGE: none; LIST-STYLE-TYPE: none
+}
+UL.toc UL {
+	DISPLAY: none
+}
+UL.toc UL.expanded {
+	DISPLAY: block
+}
+UL.toc LI A:link {
+	FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+UL.toc LI A:hover {
+	FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+UL.toc LI A:visited {
+	FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+UL.toc LI UL A {
+	FONT-SIZE: 9pt; COLOR: rgb(91,107,116); TEXT-DECORATION: none
+}
+UL.toc A:active {
+	FONT-SIZE: 9pt; BACKGROUND: rgb(91,107,116); COLOR: white; TEXT-DECORATION: none
+}
+UL.toc A.select {
+	FONT-SIZE: 9pt; BACKGROUND: rgb(91,107,116); COLOR: white; TEXT-DECORATION: none
+}
+UL.toc .over {
+	FONT-SIZE: 9pt; COLOR: red
+}
+UL.toc UL {
+	MARGIN-TOP: 0pt; MARGIN-BOTTOM: 0pt
+}
+P.list {
+	MARGIN-TOP: 5mm; MARGIN-LEFT: 10pt
+}
+
+
